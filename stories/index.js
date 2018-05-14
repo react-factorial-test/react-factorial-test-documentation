@@ -2,21 +2,21 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import JSXAddon from 'storybook-addon-jsx';
+
 import { setOptions } from '@storybook/addon-options';
 setOptions({ name:'react-factorial-test',showAddonPanel:false});
 
 import '../static/TestCSS.css';
 
 
-
-//import MultiTest from 'react-factorial-test/MultiTest';
-//import ParameterDisplay from 'react-factorial-test';
-import TestNameTool from 'react-factorial-test/TestNameTool.js';
+import {MultiTest} from 'react-factorial-test';
+import {ParameterDisplay} from 'react-factorial-test';
+import {TestNameTool} from 'react-factorial-test';
 
 import SimpleMath              from '../src/exampleComponentsToTest/simpleMath/SimpleMath.jsx';
 import simpleMathParametersRaw from '../src/exampleComponentsToTest/simpleMath/SimpleMathParameters.jsx';
 var smData = TestNameTool(simpleMathParametersRaw); // name each test after it's variable name.
-
+//var smData = simpleMathParametersRaw; // name each test after it's variable name.
 
 storiesOf('Introduction', module)
   .add('What is react-factorial-test?', () => (<div>Intro Page</div>))
@@ -56,6 +56,7 @@ storiesOf('Example - SimpleMath Component', module)
       test={
       [ [ smData.ATest.ANormalTest ] ]}
     />))
+  
     .add('Show tests A, then B, then C.  Normal data only', () => (
       <MultiTest
         target={<SimpleMath/>}
