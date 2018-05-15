@@ -8,6 +8,11 @@ setOptions({ name:'react-factorial-test',showAddonPanel:false});
 
 import '../static/TestCSS.css';
 
+import IntroPage from '../src/docs/IntroPage';
+
+import LineItem from '../src/exampleComponentsToTest/lineItem/LineItem';
+
+
 
 import {MultiTest} from 'react-factorial-test';
 import {ParameterDisplay} from 'react-factorial-test';
@@ -19,7 +24,7 @@ var smData = TestNameTool(simpleMathParametersRaw); // name each test after it's
 //var smData = simpleMathParametersRaw; // name each test after it's variable name.
 
 storiesOf('Introduction', module)
-  .add('What is react-factorial-test?', () => (<div>Intro Page</div>))
+  .add('What is react-factorial-test?', () => <IntroPage/>)
   .add('How do we define parameters?', () => (<div>Intro Page</div>))
   .add('How to multiply parameters and tests?', () => (<div>Intro Page</div>))
   .add('What are test focus buttons for?', () => (<div>Intro Page</div>))
@@ -95,3 +100,13 @@ storiesOf('Example - SimpleMath', module)
           ],
         ]}
     />))
+
+    storiesOf('My Component', module)
+    .add('normal data',()=>(<LineItem count={70} cost={3500} limit={10000} />))
+    .add('euros format',()=>(<LineItem count={70} cost={3500} limit={10000} currency='EUR'/>))
+    .add('gbp format',()=>(<LineItem count={70} cost={3500} limit={10000} currency='GBP'/>))
+    .add('low limit',()=>(<LineItem count={70} cost={3500} limit={100}/>))
+    .add('high limit',()=>(<LineItem count={70} cost={3500} limit={100000}/>))
+    .add('null A',()=>(<LineItem count={null} cost={3500} limit={10000}/>))
+    .add('null B',()=>(<LineItem count={70} cost={null} limit={10000}/>))
+        
