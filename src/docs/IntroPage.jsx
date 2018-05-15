@@ -5,6 +5,10 @@ import autoBind from 'react-autobind';
 import LineItem from '../exampleComponentsToTest/lineItem/LineItem';
 import LineItemParam from '../exampleComponentsToTest/lineItem/LineItemParameters';
 
+import Shape from '../exampleComponentsToTest/shapes/Shape';
+import ShapeParamRaw from '../exampleComponentsToTest/shapes/ShapesParameters';
+var shapeData = TestNameTool(ShapeParamRaw); // name each test after it's variable name.
+
 import {TestNameTool} from 'react-factorial-test';
 var paramData = TestNameTool(LineItemParam); // name each test after it's variable name.
 
@@ -35,145 +39,45 @@ export default class IntroPage extends React.Component {
       <li>Storybook compatible</li>
     </ul>
     <h1>What is a "factorial" test?</h1>
-    A factorial test allows you to list a set of all test-able values for each parameter of your component.<br/>
-    Then it "multiplies" all of your parameters together.  This generates a test for all combinations you care about, instead of forcing you to add a manually written story for each test.<br/>
+    A factorial test allows you to list a set of all testable values for each parameter of your component.<br/>
+    Then it "multiplies" all of your parameters together so you do not have to manually write a specific story for each test.<br/>
     <br/>
-    So if your component takes 3 parameters, and you want to test the values [0,5,null] for each parameter you would end up with 27 generated tests.<br/>
+    <div style={{ display: 'table',verticalAlign:'top' }}>
+      <div style={{display:'table-row'}}>
+        <div style={{ display: 'table-cell',  width: '20%' }}>
+          You type this:
+        </div>
+        <div style={{ display: 'table-cell', width: '20%' }}>
+          You get documents:
+        </div>
+        <div style={{ display: 'table-cell', width: '60%' }}>
+        And test results:
+        </div>
+      </div>      
+      <div style={{ display: 'table-row',maxHeight:'400px' }}>
+        <div style={{ display: 'table-cell', border: '1px solid grey', padding: '10px', width: '20%', verticalAlign: 'top' }}>
+          <img src='/simpleSample.png' style={{maxWidth:'250px'}}/>
+        </div>
+        <div style={{ display: 'table-cell', border: '1px solid grey', padding: '10px', width: '20%' }}>    
+          <ParameterDisplay data={shapeData} name='Shape Parameters' description='Explore your test values here:' />
+        </div>
+          <div style={{ display: 'table-cell',position:'relative', border: '1px solid grey', width: '60%', verticalAlign: 'top', overflow: 'auto',padding:'5px' }}>    
+              <MultiTest
+                target={<Shape/>}
+                smallMode={true}
+                test={
+                  [ [shapeData.colorTest, 
+                     shapeData.shapeTest, 
+                     shapeData.borderTest] ]}
+              />
+        </div>
+      </div>        
+    </div>
+    <br/>
+    So if your component takes 3 parameters, and you want to test 3 values for each parameter you end up with 27 tests.<br/>
     All you need to do is list the parameter options you want to test for your component.  
     
-    <h1>Let's see an example:</h1>
-    Imagine you have a simple cost calculation component to be tested:<br/>
-    <LineItem count={5} cost={15}/><br/>
-    We also have some basic requirements about it:<br/>
-
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-      Input Parameters:
-      <ul>
-        <li>Count Needed:</li>
-        <li>Unit cost:</li>
-        <li>Currency:</li>
-        <li>Limit:</li>
-      </ul>
-    </div>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'5px'}}>
-      Display Behaviors:
-      <ul>
-        <li>Validation Message when count or cost are missing.</li>
-        <li>Default to USD, but support EUR and GBP currencies.</li>
-        <li>Display the count times the cost as a total.</li>
-        <li>Show the total in red if it is over the limit.</li>
-      </ul>
-    </div>
-
-    <h1>Normal Storybook:</h1>
-    So you might normally write a set of Storybook stories that look like this:
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-      Storybook Code:<br/>
-      <img src='/normalStorybookCode.png'/>
-    </div>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'5px'}}>
-      Storybook Menu:<br/>
-      <img src='/normalStorybookMenu.png'/>
-    </div>
-    This is pretty OK.  It's got some bad input testing, it exercises the general needs of the component.<br/>
-    <br/>
-    <b>But we can do better!</b><br/>
-    What happens when you add many more parameters?<br/>
-    What happens when you want to compare two states of the same componenet?<br/>
-    When 'limit' is undefined, what is supposed to happen?<br/>
-    What happens when you have many more parameters and hundreds of possible states to test?<br/>
-    What happens when you get serious about bad input checking and all the tests that demands?<br/>
-    <i>How many times do you really want to repeat yourself about the name of the component and each parameter???</i><br/>
-    Why did you do all this typing, but still have no documentation that a Biz Dev teammate can actually read?<br/>
-
-    <h1>Let's Get Factorial:</h1>
-    The first key 'trick' of react-factorial-test is to document the parameter values we want to test.<br/>
-    We use the suffix 'Test' to tell the system which objects are tests and which objects are parameters.<br/>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-    count:
-      <ul>
-        <li>null</li>
-        <li>0</li>
-        <li>5</li>
-        <li>-5</li>
-        <li>500000</li>
-        <li>InvalidWord</li>
-      </ul>
-    </div>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-      costTest:
-      <ul>
-        <li>null</li>
-        <li>0</li>
-        <li>5</li>
-        <li>-5</li>
-        <li>500000</li>
-        <li>InvalidWord</li>
-      </ul>
-    </div>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-      currency:
-      <ul>
-        <li>null</li>
-        <li>USD</li>
-        <li>GBP</li>
-        <li>EUR</li>
-      </ul>
-    </div>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-      limit:
-      <ul>
-        <li>null</li>
-        <li>0</li>
-        <li>5</li>
-        <li>-5</li>
-        <li>500000</li>
-        <li>InvalidWord</li>
-      </ul>
-    </div>
-    Along side of MyComponent.jsx, we write MyComponentParameters.jsx.<br/>
-    It's just a normal javascript object, which lists out all the parameters we might want to test.<br/>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-    <img src='/t1.png'/>
-    </div>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-    <img src='/t2.png'/>
-    </div>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px',verticalAlign:'top'}}>
-    <img src='/t3.png'/>
-    </div>
-    <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
-    <img src='/t4.png'/>
-    </div>
-
-    <h1>Already a Win!</h1>
-    Now that we've listed the test values for each component parameter, react-factorial-test gives us a way to display them.<br/>
-    This helps team mates make sure there is clarity about each value and think about the requirements.<br/>
-    You can also add notes to your test values!
-    This component is called <b>ParameterDisplay</b>.  It takes the values listed above and makes them human readable, along with notes:
-    <div style={{maxHeight:'300px',border:'1px solid grey',margin:'15px',overflow:'auto',padding:'10px'}}>
-    <ParameterDisplay data={paramData} name='Example Parameters' description='Explore your test values here.'/>
-    </div>
-    Using this display, your requirements team can understand exactly what you're testing and give feedback if the tests make sense.<br/>
-
-    <h1>Let's Hit It!</h1>
-    Finally done with the pre-amble.  Let's multiply all those parameters together and see what we've got!<br/>
-    <div style={{maxHeight:'400px',minHeight:'400px',border:'1px solid grey',margin:'15px',overflow:'auto',padding:'10px'}}>
-    <div style={{position:'relative',height:'400px'}}>
-      <MultiTest
-        target={<LineItem/>}
-        test={
-        [ [ paramData.countTest,paramData.costTest,paramData.currencyTest,paramData.limitTest ] ]}
-      />
-      </div>
-    </div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    
-    
-    
+    <h1>To see a more in-depth example, click "Let's explore a sample" in the menu...</h1>
 
     </div>
     );

@@ -50,14 +50,14 @@
     "json-stable-stringify": "^1.0.1",
     "mdi-react": "^2.1.19",
     "react-autobind": "^1.0.6",
-    "react-factorial-test": "^0.0.9"
+    "react-factorial-test": "^0.0.12"
   },
   "peerDependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "@storybook/react": "^3.4.3",
+    "@storybook/react": "^3.4.4",
     "babel-cli": "^6.10.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",

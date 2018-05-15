@@ -9,6 +9,7 @@ setOptions({ name:'react-factorial-test',showAddonPanel:false});
 import '../static/TestCSS.css';
 
 import IntroPage from '../src/docs/IntroPage';
+import SamplePage from '../src/docs/SamplePage';
 
 import LineItem from '../src/exampleComponentsToTest/lineItem/LineItem';
 
@@ -25,9 +26,10 @@ var smData = TestNameTool(simpleMathParametersRaw); // name each test after it's
 
 storiesOf('Introduction', module)
   .add('What is react-factorial-test?', () => <IntroPage/>)
-  .add('How do we define parameters?', () => (<div>Intro Page</div>))
-  .add('How to multiply parameters and tests?', () => (<div>Intro Page</div>))
-  .add('What are test focus buttons for?', () => (<div>Intro Page</div>))
+  .add("Let's explore a sample", () => (<SamplePage />))
+  .add('How do we define parameters?', () => (<SamplePage />))
+  .add('When are the parameters multiplied?', () => (<div>Intro Page</div>))
+  .add('What are the focus buttons for?', () => (<div>Intro Page</div>))
   .add('Conclusion', () => (<div>Intro Page</div>))
 
 storiesOf('Example - SimpleMath', module)
