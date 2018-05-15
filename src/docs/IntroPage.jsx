@@ -35,7 +35,7 @@ export default class IntroPage extends React.Component {
     <ul>
       <li>Rapid test generation based on parameter documentation.</li>
       <li>Tools for side-by-side comparison of test results.</li>
-      <li>Easily review test combinations that would be tedious to spell out each as their own story.</li>
+      <li>DRY test development: No need to repeat parameters when building tests.</li>
       <li>Storybook compatible</li>
     </ul>
     <h1>What is a "factorial" test?</h1>

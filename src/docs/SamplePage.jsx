@@ -21,10 +21,6 @@ export default class IntroPage extends React.Component {
   {
     return(
    <div>
-    <hr/>
-      <h1>react-factorial-test: sample page</h1>
-    <hr/>
-    
     <h1>Let's see an example:</h1>
     Imagine you have a simple cost calculation component to be tested:<br/>
     <LineItem count={5} cost={15}/><br/>
@@ -152,7 +148,11 @@ export default class IntroPage extends React.Component {
       </div>
     </div>
     <br/>
+    ZOMG!!  Did you see how fast you just ran 864 tests!  ( 6 * 6 * 4 * 6 = 864 )<br/>
+    Your brain is astoundingly good at picking out things that visually don't match.<br />
+    Try clicking the Compact Mode button and just let them wash over you.  You can easily pick out weird tests that way.<br/>
     <br/>
+    Still, 864 might be too much of a good thing.  Use the next section to learn how you can filter out tests that ou don't need.
     <br/>
     <br/>
     
