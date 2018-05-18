@@ -29,9 +29,9 @@ storiesOf('Introduction', module)
   .add('What is react-factorial-test?', () => <IntroPage/>)
   .add("Let's explore a sample", () => (<SamplePage />))
   .add('How to define tests', () => (<ParamPage />))
-  .add('How to multiply tests', () => (<div>Intro Page</div>))
-  .add('What are the focus buttons for?', () => (<div>Intro Page</div>))
-  .add('Conclusion', () => (<div>Intro Page</div>))
+  .add('How to multiply tests', () => (<div>Not Yet Written</div>))
+  .add('What are the focus buttons for?', () => (<div>Not Yet Written</div>))
+  .add('Conclusion', () => (<div>Not Yet Written</div>))
 
 storiesOf('Example - SimpleMath', module)
     .add('Introduction', () => (<div>
@@ -104,7 +104,7 @@ storiesOf('Example - SimpleMath', module)
         ]}
     />))
 
-    storiesOf('My Component', module)
+  storiesOf('Default Storybook Examples', module)
     .add('normal data',()=>(<LineItem count={70} cost={3500} limit={10000} />))
     .add('euros format',()=>(<LineItem count={70} cost={3500} limit={10000} currency='EUR'/>))
     .add('gbp format',()=>(<LineItem count={70} cost={3500} limit={10000} currency='GBP'/>))

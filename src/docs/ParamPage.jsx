@@ -111,7 +111,7 @@ export default class IntroPage extends React.Component {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>BTest</GT>: &#123; color: 'blue' }, <BT>             //-- First group, third test</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;},<br />
           &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorInvalidTest</GT>: &#123;<BT>//-- Test invalid values</BT><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>NullTest</GT>: &#123; color: null },  <BT>           //-- null</BT><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>NullTest</GT>:  &#123; color: null },  <BT>          //-- null</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>EmptyTest</GT>: &#123; color: '' },<BT>              //-- empty</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>WrongTest</GT>: &#123; color: 'NotAColorName' }, <BT>//-- invalid</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;},<br />
@@ -149,7 +149,7 @@ export default class IntroPage extends React.Component {
 &nbsp;&nbsp;<PT>import</PT> Shape <PT>from</PT> '../exampleComponentsToTest/shapes/Shape';<br/>
 &nbsp;&nbsp;<PT>import</PT> ShapeParamRaw <PT>from</PT> '../exampleComponentsToTest/shapes/ShapesParameters';<br />
 &nbsp;&nbsp;<PT>import</PT> &#123;TestNameTool} <PT>from</PT> 'react-factorial-test';<br /><br />
-&nbsp;&nbsp;var shapeData = TestNameTool(ShapeParamRaw); <BT>// name each test after it's variable name.</BT><br />
+&nbsp;&nbsp;var shapeDataExtended = TestNameTool(ShapeParamRaw); <BT>// name each test after it's variable name.</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ConvertIcon fill='gold' /><br />
       
           &nbsp;&nbsp;<GT>colorTest</GT>: &#123;<BT>//-- Color parameter test group</BT><br />
@@ -164,10 +164,17 @@ export default class IntroPage extends React.Component {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>WrongTest</GT>: &#123; color: 'NotAColorName' , <u>tstName='WrongTest'</u> }, <BT>//-- invalid</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;},<br />
       &nbsp;&nbsp;},<br />
-                    
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ConvertIcon fill='gold' /><br />          
+          &nbsp;&nbsp;&nbsp;&nbsp;<BT>//--- to display documentation</BT><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;<YT>ParameterDisplay</YT> data=&#123;shapeDataExtended} name='Shape Parameters' description='Explore your test values here:' /><br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<BT>//--- to run tests</BT><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;<YT>MultiTest</YT> target=&#123;&lt;<YT>Shape</YT>/>} id='MTID01' test=&#123;[ [ shapeDataExtended.colorTest ] ]} /><br />
       </pre>
       
       <HH2>Special keyword: _rft allows you to enter a comment about the test.</HH2>
+      <pre style={{padding:'10px',border:'1px solid lightgrey',backgroundColor:'black',color:'white',margin:'0px'}}>
+          &nbsp;&nbsp;&nbsp;&nbsp;<GT>RTest</GT>: &#123; color: 'red', _rtf:'<BT>this is a test comment for the documentation</BT>' },  <BT>//-- A test with a comment</BT><br />
+      </pre>
 
 
     <h1>Next Section:</h1>

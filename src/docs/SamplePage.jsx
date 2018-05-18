@@ -15,13 +15,15 @@ var paramData = TestNameTool(LineItemParam); // name each test after it's variab
 import {ParameterDisplay} from 'react-factorial-test';
 import {MultiTest} from 'react-factorial-test';
 
+const HH2 = ({ children }) => (<h2 style={{ marginBottom: '2px', marginTop: '15px' }}>{children}</h2>);
+
 // Non interactive component that multiplies and adds up to three numbers
 export default class IntroPage extends React.Component {
   render()
   {
     return(
    <div>
-    <h1>Let's see an example:</h1>
+    <HH2>Let's see an example:</HH2>
     Imagine you have a simple cost calculation component to be tested:<br/>
     <LineItem count={5} cost={15}/><br/>
     We also have some basic requirements about it:<br/>
@@ -45,8 +47,8 @@ export default class IntroPage extends React.Component {
       </ul>
     </div>
 
-    <h1>Normal Storybook:</h1>
-    So you might normally write a set of Storybook stories that look like this:
+    <HH2>Normal Storybook:</HH2>
+    In normal Storybook, might write a set of stories that look like this:
     <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
       Storybook Code:<br/>
       <img src='/normalStorybookCode.png'/>
@@ -57,16 +59,18 @@ export default class IntroPage extends React.Component {
     </div>
     This is pretty OK.  It's got some bad input testing, it exercises the general needs of the component.<br/>
     <br/>
-    <b>But we can do better!</b><br/>
-    What happens when you add many more parameters?<br/>
-    What happens when you want to compare two states of the same componenet?<br/>
-    When 'limit' is undefined, what is supposed to happen?<br/>
-    What happens when you have many more parameters and hundreds of possible states to test?<br/>
-    What happens when you get serious about bad input checking and all the tests that demands?<br/>
-    <i>How many times do you really want to repeat yourself about the name of the component and each parameter???</i><br/>
-    Why did you do all this typing, but still have no documentation that a Biz Dev teammate can actually read?<br/>
+    <HH2>But we can do better!</HH2>
+    <ul>
+    <li>What happens when you add many more parameters?</li>
+    <li>What happens when you want to compare two states of the same componenet?</li>
+    <li>When 'limit' is undefined, what is supposed to happen?</li>
+    <li>What happens when you have many more parameters and hundreds of possible states to test?</li>
+    <li>What happens when you get serious about bad input checking and all the tests that demands?</li>
+    <li><i>How many times do you really want to repeat yourself about the name of the component and each parameter???</i></li>
+    <li>Why did you do all this typing, but still have no documentation that a Biz Dev teammate can actually read?</li>
+    </ul>
 
-    <h1>Let's Get Factorial:</h1>
+    <HH2>Let's Get Factorial:</HH2>
     The first key 'trick' of react-factorial-test is to document the parameter values we want to test.<br/>
     We use the suffix 'Test' to tell the system which objects are tests and which objects are parameters.<br/>
     <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
@@ -126,7 +130,7 @@ export default class IntroPage extends React.Component {
           <img src='/t4.png' style={{ maxWidth: '175px' }}/>
     </div>
 
-    <h1>Already a Win!</h1>
+    <HH2>Already a Win!</HH2>
     Now that we've listed the test values for each component parameter, react-factorial-test gives us a way to display them.<br/>
     This helps team mates make sure there is clarity about each value and think about the requirements.<br/>
     You can also add notes to your test values!
@@ -136,11 +140,12 @@ export default class IntroPage extends React.Component {
     </div>
     Using this display, your requirements team can understand exactly what you're testing and give feedback if the tests make sense.<br/>
 
-    <h1>Let's Hit It!</h1>
+    <HH2>Let's Hit It!</HH2>
     Finally done with the pre-amble.  Let's multiply all those parameters together and see what we've got!<br/>
     <div style={{maxHeight:'400px',minHeight:'400px',border:'1px solid grey',margin:'15px',overflow:'auto',padding:'10px'}}>
     <div style={{position:'relative',height:'400px'}}>
       <MultiTest
+        id='SamplePage1'
         target={<LineItem/>}
         test={
         [ [ paramData.countTest,paramData.costTest,paramData.currencyTest,paramData.limitTest ] ]}
@@ -151,8 +156,8 @@ export default class IntroPage extends React.Component {
     ZOMG!!  Did you see how fast you just ran 864 tests!  ( 6 * 6 * 4 * 6 = 864 )<br/>
     Your brain is astoundingly good at picking out things that visually don't match.<br />
     Try clicking the Compact Mode button and just let them wash over you.  You can easily pick out weird tests that way.<br/>
-    <br/>
-    Still, 864 might be too much of a good thing.  Use the next section to learn how you can filter out tests that ou don't need.
+    <HH2>Next Section:</HH2>    
+        Now that we have the idea, let's start defining test parameters: <a href='http://local.modaquote.com:6006/?selectedKind=Introduction&selectedStory=How%20to%20define%20tests&full=0&addons=0&stories=1&panelRight=0'>How to define tests</a>.
     <br/>
     <br/>
     
