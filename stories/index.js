@@ -11,6 +11,9 @@ import '../static/TestCSS.css';
 import IntroPage from '../src/docs/IntroPage';
 import SamplePage from '../src/docs/SamplePage';
 import ParamPage from '../src/docs/ParamPage';
+import MultiPage from '../src/docs/MultiPage';
+import ConclusionPage from '../src/docs/ConclusionPage';
+import FocusPage from '../src/docs/FocusPage';
 
 import LineItem from '../src/exampleComponentsToTest/lineItem/LineItem';
 
@@ -29,9 +32,9 @@ storiesOf('Introduction', module)
   .add('What is react-factorial-test?', () => <IntroPage/>)
   .add("Let's explore a sample", () => (<SamplePage />))
   .add('How to define tests', () => (<ParamPage />))
-  .add('How to multiply tests', () => (<div>Not Yet Written</div>))
-  .add('What are the focus buttons for?', () => (<div>Not Yet Written</div>))
-  .add('Conclusion', () => (<div>Not Yet Written</div>))
+  .add('How to multiply tests', () => (<MultiPage/>))
+  .add('What are the focus buttons for?', () => (<FocusPage/>))
+  .add('Conclusion', () => (<ConclusionPage/>))
 
 storiesOf('Example - SimpleMath', module)
     .add('Introduction', () => (<div>

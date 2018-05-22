@@ -153,11 +153,12 @@ export default class IntroPage extends React.Component {
       </div>
     </div>
     <br/>
-    ZOMG!!  Did you see how fast you just ran 864 tests!  ( 6 * 6 * 4 * 6 = 864 )<br/>
+        ZOMG!!  Did you see how fast you just ran 864 tests!  ( 6 * 6 * 4 * 6 = 864 )<br /><br />
     Your brain is astoundingly good at picking out things that visually don't match.<br />
-    Try clicking the Compact Mode button and just let them wash over you.  You can easily pick out weird tests that way.<br/>
+    Hover your mouse just above each test that looks broken.  You'll have the ability to toggle 'flagged' mode.<br/>
+    Once you've done that click the magnify flagged icon and you'll "zoom in" to see only the flagged tests.<br/>
     <HH2>Next Section:</HH2>    
-        Now that we have the idea, let's start defining test parameters: <a href='http://local.modaquote.com:6006/?selectedKind=Introduction&selectedStory=How%20to%20define%20tests&full=0&addons=0&stories=1&panelRight=0'>How to define tests</a>.
+        Now that we have the idea, let's start defining test parameters: <a href='/?selectedKind=Introduction&selectedStory=How%20to%20define%20tests&full=0&addons=0&stories=1&panelRight=0'>How to define tests</a>.
     <br/>
     <br/>
     

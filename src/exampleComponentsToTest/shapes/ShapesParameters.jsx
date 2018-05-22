@@ -8,7 +8,7 @@ const shapeParamData =
       BTest: { color: 'blue' },
     },
     shapeTest: {
-      SqaureTest:  { shape: 'square' },
+      SquareTest:  { shape: 'square' },
       DiamondTest: { shape: 'diamond' },
       CircleTest:  { shape: 'circle' },
     },

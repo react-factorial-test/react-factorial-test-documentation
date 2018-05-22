@@ -46,7 +46,7 @@ export default class IntroPage extends React.Component {
           &nbsp;&nbsp;&nbsp;&nbsp;<GT>BTest</GT>: &#123; color: 'blue' }, <BT>//-- First group, third test</BT><br />
       &nbsp;&nbsp;},<br />
           &nbsp;&nbsp;<GT>shapeTest:</GT> &#123;<BT>//-- Second test group.</BT><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<GT>SqaureTest</GT>:  &#123; shape: 'square' },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<GT>SquareTest</GT>:  &#123; shape: 'square' },<br />
           &nbsp;&nbsp;&nbsp;&nbsp;<GT>DiamondTest</GT>: &#123; shape: 'diamond' },<br />
           &nbsp;&nbsp;&nbsp;&nbsp;<GT>CircleTest</GT>:  &#123; shape: 'circle' },<br />
       &nbsp;&nbsp;},<br />

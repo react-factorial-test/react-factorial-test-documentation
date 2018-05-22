@@ -78,7 +78,7 @@ export default class IntroPage extends React.Component {
     So if your component takes 3 parameters, and you want to test 3 values for each parameter you end up with 27 tests.<br/>
     All you need to do is list the parameter options you want to test for your component.  
             
-    <h1>To see a more in-depth example, click "<a href='http://local.modaquote.com:6006/?selectedKind=Introduction&selectedStory=Let%27s%20explore%20a%20sample&full=0&addons=0&stories=1&panelRight=0'>Let's explore a sample</a>" in the menu...</h1>
+    <h1>To see a more in-depth example, click "<a href='/?selectedKind=Introduction&selectedStory=Let%27s%20explore%20a%20sample&full=0&addons=0&stories=1&panelRight=0'>Let's explore a sample</a>" in the menu...</h1>
 
     </div>
     );
