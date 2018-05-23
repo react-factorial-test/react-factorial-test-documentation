@@ -15,28 +15,37 @@ var paramData = TestNameTool(LineItemParam); // name each test after it's variab
 import {ParameterDisplay} from 'react-factorial-test';
 import {MultiTest} from 'react-factorial-test';
 
+function cleanStoryBookScrollBar(){
+  window.parent.document.getElementsByClassName("horizontal")[1].style['overflow'] = '';
+}
+
 // Non interactive component that multiplies and adds up to three numbers
 export default class IntroPage extends React.Component {
+
   render()
   {
     return(
-      <div class='roboFont'>
+      <div className='roboFont' onLoad={cleanStoryBookScrollBar}>
     <center>
     <hr/>
-      <h1>react-factorial-test</h1>
+          <h1 style={{ marginTop: '5px', marginBottom: '5px', }}>
+        <img src='/iconSmall.png' style={{float:'right'}}/>
+        react-factorial-test
+        <img src='/iconSmall.png' style={{ float: 'left' }}/>
+        </h1>
     <hr/>
     <img src='/fact1.png'/><br/>
-      <img src='/factorial.png'/>
+    <img src='/factorial.png'/>
     <br/>
     <hr/>
     </center>
     <h1>Introduction</h1>
-    This is the documentation for react-factorial-test.
+    This is the documentation for <a href='https://github.com/react-factorial-test/react-factorial-test'>react-factorial-test</a>.
     <ul>
       <li>Rapid test generation based on parameter documentation.</li>
       <li>Tools for side-by-side comparison of test results.</li>
       <li>DRY test development: No need to repeat parameters when building tests.</li>
-      <li>Storybook compatible</li>
+      <li><a href='https://storybook.js.org/'>Storybook</a> compatible</li>
     </ul>
     <h1>What is a "factorial" test?</h1>
     A factorial test allows you to list a set of all testable values for each parameter of your component.<br/>

@@ -31,7 +31,7 @@ export default class IntroPage extends React.Component {
     return(
    <div>
     <h1>Parameter Definition:</h1>
-    Parameter re-use is a core component of this project.<br/>  
+    Parameter reuse is a core theme of this tool.<br/>  
     Here is how you define your parameters:
 
       <HH2>The tests are defined by one JSON object:</HH2>
@@ -59,6 +59,7 @@ export default class IntroPage extends React.Component {
       </pre>
 
       <HH2>A leaf node object specifies the test parameter values:</HH2>
+      In this case you can see how RTest is applied to the ShapeComponent to create a test.<br/>
       <pre style={{padding:'10px',border:'1px solid lightgrey',backgroundColor:'black',color:'white',margin:'0px'}}>
           &nbsp;&nbsp;&nbsp;&nbsp;<GT>RTest</GT>: &#123; color: 'red' },  <BT>//-- First group, first test</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ConvertIcon fill='gold'/><br/>
@@ -95,27 +96,28 @@ export default class IntroPage extends React.Component {
           &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorGood<u>Test</u></GT>: &#123;<BT> //-- First test sub group</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>R<u>Test</u></GT>: <BT>        //-- First actual test object</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; color: 'red',   label:'label red',   foo:'bar' },  <BT> //-- Actual parameter data.  </BT><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BT>             //-- Because these attributes don't end in 'Test', the system knows it is parameter data.  </BT><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BT>             //-- Because these attribute names don't end in 'Test',   </BT><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BT>             //-- the system knows the object is parameter data.  </BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
           &nbsp;&nbsp;}<br />
       </pre>
             
       <HH2>This naming convention allows you to slice and dice your tests:</HH2>
       <pre style={{padding:'10px',border:'1px solid lightgrey',backgroundColor:'black',color:'white',margin:'0px'}}>
-          const shapeParamData =<BT>//-- This is my outer test object. </BT><br />
+          const shapeParamData =<BT>  //-- This is my outer test object. </BT><br />
       &#123;<br />
-          &nbsp;&nbsp;<GT>colorTest</GT>: &#123;<BT>//-- Color parameter test group</BT><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorSimpleTest</GT>: &#123;<BT>//-- Test color names</BT><br />
+          &nbsp;&nbsp;<GT>colorTest</GT>: &#123;<BT>          //-- Color parameter test group</BT><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorSimpleTest</GT>: &#123;<BT>  //-- Test color names</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>RTest</GT>: &#123; color: 'red' },  <BT>             //-- First group, first test</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>GTest</GT>: &#123; color: 'green' },<BT>             //-- First group, second test</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>BTest</GT>: &#123; color: 'blue' }, <BT>             //-- First group, third test</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;},<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorInvalidTest</GT>: &#123;<BT>//-- Test invalid values</BT><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorInvalidTest</GT>: &#123;<BT>  //-- Test invalid values</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>NullTest</GT>:  &#123; color: null },  <BT>          //-- null</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>EmptyTest</GT>: &#123; color: '' },<BT>              //-- empty</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>WrongTest</GT>: &#123; color: 'NotAColorName' }, <BT>//-- invalid</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;},<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorByNumberTest</GT>: &#123;<BT>//-- Test numeric values</BT><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorByNumberTest</GT>: &#123;<BT>  //-- Test numeric values</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>Num1Test</GT>: &#123; color: '#FFF' },<BT>           //-- white</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>Num2Test</GT>: &#123; color: '#F00' },<BT>           //-- red</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>Num3Test</GT>: &#123; color: '#0F0' },<BT>           //-- green</BT><br />
@@ -129,6 +131,8 @@ export default class IntroPage extends React.Component {
       </pre>
 
       <HH2>The TestNameTool makes your variable names appear in the data:</HH2>      
+      This is important.  Once you pass the object into react-factorial-test the variable name of each test object is lost.<br/>
+      To prevent that, we use this function to add your test names into the object without forcing you to type the name twice.<br/>
       <pre style={{padding:'10px',border:'1px solid lightgrey',backgroundColor:'black',color:'white',margin:'0px'}}>
           const shapeParamData =<BT>//-- You type this part </BT><br />
       &#123;<br />
@@ -146,12 +150,14 @@ export default class IntroPage extends React.Component {
       &nbsp;&nbsp;},<br />
       };              <br/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ConvertIcon fill='gold' /><br />
+&nbsp;&nbsp;<BT>//-- Import the TestNameTool and make your test data ready to use:</BT><br />          
 &nbsp;&nbsp;<PT>import</PT> Shape <PT>from</PT> '../exampleComponentsToTest/shapes/Shape';<br/>
 &nbsp;&nbsp;<PT>import</PT> ShapeParamRaw <PT>from</PT> '../exampleComponentsToTest/shapes/ShapesParameters';<br />
 &nbsp;&nbsp;<PT>import</PT> &#123;TestNameTool} <PT>from</PT> 'react-factorial-test';<br /><br />
 &nbsp;&nbsp;var shapeDataExtended = TestNameTool(ShapeParamRaw); <BT>// name each test after it's variable name.</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ConvertIcon fill='gold' /><br />
       
+          &nbsp;&nbsp;<BT>//-- Now the data looks like this:</BT><br />          
           &nbsp;&nbsp;<GT>colorTest</GT>: &#123;<BT>//-- Color parameter test group</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;<GT>colorSimpleTest</GT>: &#123;<BT>//-- Test color names</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>RTest</GT>: &#123; color: 'red' , <u>tstName='RTest'</u> },  <BT>         //-- First group, first test</BT><br />
@@ -164,21 +170,25 @@ export default class IntroPage extends React.Component {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<GT>WrongTest</GT>: &#123; color: 'NotAColorName' , <u>tstName='WrongTest'</u> }, <BT>//-- invalid</BT><br />
           &nbsp;&nbsp;&nbsp;&nbsp;},<br />
       &nbsp;&nbsp;},<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ConvertIcon fill='gold' /><br />          
-          &nbsp;&nbsp;&nbsp;&nbsp;<BT>//--- to display documentation</BT><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;<YT>ParameterDisplay</YT> data=&#123;shapeDataExtended} name='Shape Parameters' description='Explore your test values here:' /><br /><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<BT>//--- to run tests</BT><br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&lt;<YT>MultiTest</YT> target=&#123;&lt;<YT>Shape</YT>/>} id='MTID01' test=&#123;[ [ shapeDataExtended.colorTest ] ]} /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ConvertIcon fill='gold' /><br />          
+&nbsp;&nbsp;&nbsp;&nbsp;<BT>//--- Now use that enhanced data...</BT><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<BT>//--- to display documentation</BT><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<YT>ParameterDisplay</YT> data=&#123;shapeDataExtended} <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name='Shape Parameters' <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description='Explore your test values here:' /><br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<BT>//--- and to run tests</BT><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<YT>MultiTest</YT> target=&#123;&lt;<YT>Shape</YT>/>} id='MTID01' <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test=&#123;[ [ shapeDataExtended.colorTest ] ]} /><br />
       </pre>
       
       <HH2>Special keyword: _rft allows you to enter a comment about the test.</HH2>
       <pre style={{padding:'10px',border:'1px solid lightgrey',backgroundColor:'black',color:'white',margin:'0px'}}>
-          &nbsp;&nbsp;&nbsp;&nbsp;<GT>RTest</GT>: &#123; color: 'red', _rtf:'<BT>this is a test comment for the documentation</BT>' },  <BT>//-- A test with a comment</BT><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<GT>RTest</GT>: &#123; color: 'red', _rtf:'<BT>this is a test comment for the documentation</BT>' },<br />
       </pre>
 
 
     <h1>Next Section:</h1>
-    How to specify which multiplications you want to perform:
+            How to specify which <a href='/?selectedKind=Introduction&selectedStory=How%20to%20multiply%20tests&full=0&addons=0&stories=1&panelRight=0'>multiplications</a> you want to perform:
 
     </div>
     );

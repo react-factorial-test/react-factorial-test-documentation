@@ -34,17 +34,21 @@ export default class MultiPage extends React.Component {
     Once we have many variations on our tests, we need to compare and contrast them.<br/>  
     Use the focus buttons to "zoom in" on a single test while editing, or to look at two tests side by side.
 
-      <HH2>More about Storybook:</HH2>
-      When building your tests create a tag that takes the parameter definitions and the multiplications to create:<br />
+        <HH2>About the Samples:</HH2>
+        When building your tests create a tag that takes the parameter definitions and the multiplications to create:<br />
+
+        <HH2>How to read the Sample Code:</HH2>
+        github link for react-factorial-test-documentation:<br />
+
+        <HH2>More about Storybook:</HH2>
+        Storybook info:<br />
+
 
         <HH2>Why Patreon:</HH2>
+        I like the idea of Patreon, and it would be lovely to get a tip for making this open source.
+        If you like the tool, but don't ever see yourself contributing code, 
+        this is a way to chip into development without having to put in any work.
 
-        <HH2>Comparison Buttons:</HH2>
-
-        <HH2>Compact vs Test Per Line modes:</HH2>
-
-    <h1>Next Section:</h1>
-    Conclusion and Other Resources:
 
     </div>
     );
