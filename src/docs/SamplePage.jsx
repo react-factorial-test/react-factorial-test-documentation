@@ -48,7 +48,7 @@ export default class IntroPage extends React.Component {
     </div>
 
     <HH2>Normal Storybook:</HH2>
-    In normal Storybook, you might write a set of stories that look like this:
+    In normal <a href='https://storybook.js.org/'>Storybook</a> testing, you might write a set of stories that look like this:
     <div style={{display:'table-cell',border:'1px solid grey',padding:'10px'}}>
       <b>Storybook Code:</b><br/>
       <img src='/normalStorybookCode.png'/>

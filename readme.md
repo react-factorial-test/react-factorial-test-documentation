@@ -1,7 +1,6 @@
 
 
 react-factorial-test is a component that renders many tests based only on input parameters.
-react-factorial-test-documentation is simply the sample code for the main component.
 
 Explore the documentation here:
 ## [http://react-factorial-test.github.io/](http://react-factorial-test.github.io)

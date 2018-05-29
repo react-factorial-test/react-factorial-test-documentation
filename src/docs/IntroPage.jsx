@@ -29,18 +29,26 @@ export default class IntroPage extends React.Component {
     <center>
     <hr/>
           <h1 style={{ marginTop: '5px', marginBottom: '5px', }}>
-        <img src='/iconSmall.png' style={{float:'right'}}/>
         react-factorial-test
-        <img src='/iconSmall.png' style={{ float: 'left' }}/>
         </h1>
     <hr/>
+    <img src='/icon1.png' style={{display:'inline-block',float:'left',width:'75px',verticalAlign:'top'}}/>
+    <div style={{display:'inline-block'}}>
     <img src='/fact1.png'/><br/>
     <img src='/factorial.png'/>
+    </div>
+    <img src='/icon1.png' style={{ display:'inline-block',float: 'right',width:'75px',verticalAlign:'top' }}/>
     <br/>
     <hr/>
     </center>
-    
+
     <h1>What is a "factorial" test?</h1>
+    Imagine you need automated, visual tests for a react component that renders a playing card:<br/>
+    You've got a rank:  ( A, K, Q, J, 10, 9, 8, 7, 6, 5, 4, 3, 2 ) and you've got a suite: ( ♠, ♥, ♦, ♣ )<br/>
+    Using react-factorial-test you simply list the 13 elements of rank and the 4 elements of suite.  Then the tool generates a test render for all 52 possible playing cards.<br/>
+    Mathematically, this is actually called an <a href='https://en.wikipedia.org/wiki/Cartesian_product#n-ary_Cartesian_product'>n-fold cartesian product</a>.  But 'factorial' seems to get the idea across more easily.
+    
+    <h1>How does it work?</h1>
     A factorial test encourages you to write a list of test values for each property on your component.<br/>
     Then it "multiplies" all of your parameters together.  This lets you compare different states without manually writing a specific story for each test.<br/>
     <br/>
@@ -77,8 +85,11 @@ export default class IntroPage extends React.Component {
       </div>        
     </div>
     <h1>GitHub</h1>
-        You can find the github repo for the project here:<br/>
-     <a href='https://github.com/react-factorial-test/react-factorial-test'>react-factorial-test</a>.<br /><br />
+        You can find the github repo for the project here: <a href='https://github.com/react-factorial-test/react-factorial-test'>react-factorial-test</a>.<br />
+        You can find the github repo for this sample website here: <a href='https://github.com/react-factorial-test/react-factorial-test-documentation'>react-factorial-test</a>.<br />
+        <br/>
+        After you clone <b>react-factorial-test-documentation</b> call <b>npm run storybook</b> to see this page and all the sample tests running locally.<br/>
+        <br />
       <h1>Core Features</h1>
       
       <ul>
