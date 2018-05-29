@@ -113,7 +113,7 @@ export default class MultiPage extends React.Component {
       </pre>
 
         <HH2>Get all the tests by multiplying everything together...</HH2>
-            If you want the full monty, give all three objects to be multipled.  This will render 27 tests:<br />
+            If you want the full monty, give all three objects to be multiplied.  This will render 27 tests:<br />
         <pre style={{ padding: '10px', border: '1px solid lightgrey', backgroundColor: 'black', color: 'white', margin: '0px' }}>
             <BT>//-- storybook index.js</BT><br/>
 &nbsp;&nbsp;storiesOf('Example - SimpleMath', module)      <BT>  //-- add a chapter to storybook</BT><br />
@@ -151,7 +151,7 @@ storiesOf('Example - SimpleMath', module)      <BT>  //-- add a chapter to story
       </pre>
 
 
-<HH2>Seperate your test definitions by what you're expecting to multiply together:</HH2>
+<HH2>Separate your test definitions by what you're expecting to multiply together:</HH2>
 It is helpful to separate your "normal" tests from your bad data test cases.<br/>
 Generally, you'll want to build groups of tests that you're likely to multiply again and again,<br/>
 while leaving the less common tests in a separate group.<br/>

@@ -127,7 +127,7 @@ export default class IntroPage extends React.Component {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ConvertIcon fill='gold' /><br />
           shapeParamData.colorTest                             => <GLD>runs all 9 tests.</GLD><br/>      
           shapeParamData.colorTest.colorInvalidTest            => <GLD>runs only the 3 bad data tests.</GLD><br />
-          shapeParamData.colorTest.colorByNumberTest.Num2Test  => <GLD>runs only 1 specifc test.</GLD><br />
+          shapeParamData.colorTest.colorByNumberTest.Num2Test  => <GLD>runs only 1 specific test.</GLD><br />
       </pre>
 
       <HH2>The TestNameTool makes your variable names appear in the data:</HH2>      

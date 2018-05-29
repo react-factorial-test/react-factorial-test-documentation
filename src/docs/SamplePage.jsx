@@ -63,7 +63,7 @@ export default class IntroPage extends React.Component {
     That storybook testing is a huge help.  However, there are some hassles involved too:
     <ul>
     <li>What happens when you add many more parameters?</li>
-    <li>What happens when you want to compare two states of the same componenet?</li>
+    <li>What happens when you want to compare two states of the same component?</li>
     <li>When 'limit' is undefined, what is supposed to happen?</li>
     <li>What happens when you have many parameters and hundreds of possible states to test?</li>
     <li>What happens when you get serious about bad input checking and all the tests that demands?</li>

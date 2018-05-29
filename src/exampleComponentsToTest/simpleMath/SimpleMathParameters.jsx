@@ -8,7 +8,7 @@ const testData=
 {
   ATest:{
     ANormalTest:{
-      a0Test: { a: 0, _rft:'0 is falsey.  make sure 0 renders but that null does not get renderd' },
+      a0Test: { a: 0, _rft:'0 is falsey.  make sure 0 renders but that null does not get rendered' },
       a1Test: { a: 1, _rft:'normal test value' },
       a2Test: { a: 2.2, _rft:'make sure non-integers work' },
     },
@@ -22,7 +22,7 @@ const testData=
   },
   BTest:{
     BNormalTest:{
-      b0Test: { b: 0, _rft:'0 is falsey.  make sure 0 renders but that null does not get renderd' },
+      b0Test: { b: 0, _rft:'0 is falsey.  make sure 0 renders but that null does not get rendered' },
       b3Test: { b: 3, _rft:'normal test value' },
       b63Test: { b: 6.3, _rft:'make sure non-integers work' },
       },
@@ -36,7 +36,7 @@ const testData=
   },
   CTest: {
     CNormalTest:{
-      c0Test: { c: 0, _rft:'0 is falsey.  make sure 0 renders but that null does not get renderd' },
+      c0Test: { c: 0, _rft:'0 is falsey.  make sure 0 renders but that null does not get rendered' },
       c5Test: { c: 5, _rft:'normal test value' },
       c55Test: { c: 5.5, _rft:'make sure non-integers work' },
     },

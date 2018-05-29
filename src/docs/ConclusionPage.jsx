@@ -34,7 +34,7 @@ export default class MultiPage extends React.Component {
 Thanks for stopping by and taking a look at react-factorial-test.  I hope you find it useful.
 
         <HH2>Why "Factorial" instead of some other word?</HH2>
-        Combinatorial doesn't seem right because a compination can repeat values, where you cannot repeat parameters in a component.<br />
+        Combinatorial doesn't seem right because a combination can repeat values, where you cannot repeat parameters in a component.<br />
         Exponential seems to be a little bit like over-selling things.  And it's not x to the nth anyway.<br/>
         In the end, I just felt like "factorial" gives the best idea of what the tool is about.<br/>
 
@@ -71,7 +71,7 @@ Thanks for stopping by and taking a look at react-factorial-test.  I hope you fi
         <a href='https://www.patreon.com/ReactFactorialTest'>https://www.patreon.com/ReactFactorialTest</a><br /><br />
 
         The basic trade of open source is that I make the code available in exchange for fixes and improvements.<br/>
-        Among coders, I think that makes sense.  But at the same time, I use many components that I will never conribute on for lack of need.<br/>
+        Among coders, I think that makes sense.  But at the same time, I use many components that I will never contribute on for lack of need.<br/>
         In those cases I feel like I'm not giving back enough<br/>
         However, I am willing to give a dollar or so each month to support the community.  And if a thousand like minded people exist in the world then that
         developer gets a tidy little bonus each month for their work.<br/><br/>        

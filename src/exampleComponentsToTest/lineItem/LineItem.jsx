@@ -7,7 +7,7 @@ import accounting from 'accounting';
 export default class LineItem extends React.Component {
   render()
   {
-    // validaate the props
+    // validate the props
     var a = this.props.count;
     var b = this.props.cost;
     var c = this.props.currency;

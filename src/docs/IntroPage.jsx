@@ -39,17 +39,10 @@ export default class IntroPage extends React.Component {
     <br/>
     <hr/>
     </center>
-    <h1>Introduction</h1>
-    This is the documentation for <a href='https://github.com/react-factorial-test/react-factorial-test'>react-factorial-test</a>.
-    <ul>
-      <li>Rapid test generation based on parameter documentation.</li>
-      <li>Tools for side-by-side comparison of test results.</li>
-      <li>DRY test development: No need to repeat parameters when building tests.</li>
-      <li><a href='https://storybook.js.org/'>Storybook</a> compatible</li>
-    </ul>
+    
     <h1>What is a "factorial" test?</h1>
-    A factorial test allows you to list a set of all testable values for each parameter of your component.<br/>
-    Then it "multiplies" all of your parameters together so you do not have to manually write a specific story for each test.<br/>
+    A factorial test encourages you to write a list of test values for each property on your component.<br/>
+    Then it "multiplies" all of your parameters together.  This lets you compare different states without manually writing a specific story for each test.<br/>
     <br/>
     <div style={{ display: 'table',verticalAlign:'top' }}>
       <div style={{display:'table-row'}}>
@@ -83,6 +76,18 @@ export default class IntroPage extends React.Component {
         </div>
       </div>        
     </div>
+    <h1>GitHub</h1>
+        You can find the github repo for the project here:<br/>
+     <a href='https://github.com/react-factorial-test/react-factorial-test'>react-factorial-test</a>.<br /><br />
+      <h1>Core Features</h1>
+      
+      <ul>
+          <li>Rapid test generation based on parameter documentation.</li>
+          <li>Tools for side-by-side comparison of test results.</li>
+          <li>DRY test development: No need to repeat parameters when building tests.</li>
+          <li><a href='https://storybook.js.org/'>Storybook</a> compatible</li>
+        </ul>
+    
     <br/>
     So if your component takes 3 parameters, and you want to test 3 values for each parameter you end up with 27 tests.<br/>
     All you need to do is list the parameter options you want to test for your component.  
