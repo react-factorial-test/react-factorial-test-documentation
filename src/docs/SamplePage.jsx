@@ -5,6 +5,11 @@ import autoBind from 'react-autobind';
 import LineItem from '../exampleComponentsToTest/lineItem/LineItem';
 import LineItemParam from '../exampleComponentsToTest/lineItem/LineItemParameters';
 
+import GoBig from 'mdi-react/ArrowExpandAllIcon';
+import GoSmall from 'mdi-react/ArrowCollapseAllIcon';
+import MagnifyIcon from 'mdi-react/MagnifyIcon';
+import FlagIcon from 'mdi-react/FlagVariantIcon';
+import UnFilter from 'mdi-react/BookmarkRemoveIcon';
 import Shape from '../exampleComponentsToTest/shapes/Shape';
 import ShapeParamRaw from '../exampleComponentsToTest/shapes/ShapesParameters';
 var shapeData = TestNameTool(ShapeParamRaw); // name each test after it's variable name.
@@ -145,8 +150,8 @@ export default class IntroPage extends React.Component {
 
     <HH2>Let's Hit It!</HH2>
     We are finally done with the pre-amble.  Let's multiply all those parameters together and see what tests we've got!<br/>
-    <div style={{maxHeight:'250px',minHeight:'250px',border:'1px solid grey',margin:'15px',overflow:'auto',padding:'10px'}}>
-    <div style={{position:'relative',height:'250px'}}>
+    <div style={{maxHeight:'450px',minHeight:'450px',border:'1px solid grey',margin:'15px',overflow:'auto',padding:'10px'}}>
+    <div style={{position:'relative',height:'450px'}}>
       <MultiTest
         id='SamplePage1'
         target={<LineItem/>}
@@ -156,13 +161,39 @@ export default class IntroPage extends React.Component {
       </div>
     </div>
     <br/>
-        ZOMG!!  Did you see how fast you just wrote 864 tests!  ( 6 * 6 * 4 * 6 = 864 )<br /><br />
-        Many of these aren't helpful, so we will teach you how to filter them out.<br/>
-        But for now, think about what a time saver it was not having to write all of those tests!<br /><br />
+        ZOMG!!  Did you see how fast you just wrote 864 tests!  ( 6 * 6 * 4 * 6 = 864 )<br />
+        <br />
+        Of course, we have a lot of invalid values in this test.  This sample multiplies everything times everything, but in a real test you might configure away many of the 'multi-negative' tests shown here.<br/>
+        But for now, think about what a time saver it was not having to write all of those tests by hand!<br /><br />
     Your brain is astoundingly good at picking out things that visually don't match.<br />
         Hover your mouse just above each test that looks broken to see what parameters are not rendered correctly.  <br />
-    You toggle the 'flagged' mode for each test you'd like to review later.<br/>
-    Once you've done that click the magnify flagged icon and you'll "zoom in" to see only the flagged tests.<br/>
+
+<HH2>New Test Working Tools:</HH2>            
+react-factorial-test also gives you tools to compare and review your tests that need work.<br/>
+Try using the&nbsp;
+        <div key='goBig' id={'reactFactorialTest_goBig' + this.id} style={{ display: 'inline-block', padding: '2px', height: '18px', backgroundColor: 'lightgreen', border: '1px solid black' }}
+           title='Toggle: One Test Per Line'>
+          <GoBig width={18} height={18} />
+        </div>&nbsp;&amp;&nbsp;
+        <div key='goSmall' id={'reactFactorialTest_goSmall' + this.id} style={{ display: 'inline-block', padding: '2px', height: '18px', backgroundColor: 'lightgreen', border: '1px solid black' }}
+           title='Toggle: Compact Mode'>
+          <GoSmall width={18} height={18} />
+        </div>
+        &nbsp;icons to see the tests all together or one per line.<br/><br/>
+    You can toggle the 'flagged' mode for each test you'd like to review or compare:<br/>
+    In expanded mode use &nbsp;<div style={{ padding: '2px', height: '18px', backgroundColor: 'lightgreen', border: '1px solid black', width: 20, display: 'inline-block' }}          
+          title='Flag test for review'
+        ><FlagIcon width={18} height={18} /></div>&nbsp; or in compact mode, click the white space just above each test.<br/>
+    Then you could click the 
+    &nbsp;
+        <div style={{ display: 'inline-block', padding: '2px', height: '18px', backgroundColor: 'lightgreen', border: '1px solid black' }}
+           title='Focus On Flagged Tests'
+        ><MagnifyIcon width={18} height={18} /><FlagIcon width={18} height={18} /></div>&nbsp;icon and you'll "zoom in" to see only the flagged tests.<br/>
+When you are done looking at the flagged tests, you can use &nbsp;
+        <div style={{ display: 'inline-block', padding: '2px', height: '18px', backgroundColor: 'lightgreen', border: '1px solid black' }}          
+          title='UnFocus / Show All Tests'
+        ><UnFilter width={18} height={18} /></div>&nbsp; to show everything.
+
     <HH2>Next Section:</HH2>    
         Now that we have the idea, let's start defining test parameters: <a href='/?selectedKind=Introduction&selectedStory=How%20to%20define%20tests&full=0&addons=0&stories=1&panelRight=0'>How to define tests</a>.
     <br/>

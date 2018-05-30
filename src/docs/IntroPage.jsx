@@ -86,7 +86,7 @@ export default class IntroPage extends React.Component {
     </div>
     <h1>GitHub</h1>
         You can find the github repo for the project here: <a href='https://github.com/react-factorial-test/react-factorial-test'>react-factorial-test</a>.<br />
-        You can find the github repo for this sample website here: <a href='https://github.com/react-factorial-test/react-factorial-test-documentation'>react-factorial-test</a>.<br />
+        You can find the github repo for this sample website here: <a href='https://github.com/react-factorial-test/react-factorial-test-documentation'>react-factorial-test-documentation</a>.<br />
         <br/>
         After you clone <b>react-factorial-test-documentation</b> call <b>npm run storybook</b> to see this page and all the sample tests running locally.<br/>
         <br />
