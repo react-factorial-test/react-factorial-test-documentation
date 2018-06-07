@@ -148,7 +148,7 @@ const testData=
     singleInput1x1SingleCellSelectionTest:{testCursor:{x:1,y:1,editX:1,editY:1}},
     singleInput1x1LargeSelectionTest:{testCursor:{x:2,y:2,selectToX:4,selectToY:4,editX:3,editY:3,shiftSelInProgress:true}},
   },
-    //--- test grid-wide style settings
+  //--- test grid-wide style settings
   styleGridTest:{
     styleAllTest:{
       styleHeaderCell:{backgroundColor:'pink'},

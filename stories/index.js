@@ -16,6 +16,7 @@ import ConclusionPage from '../src/docs/ConclusionPage';
 import FocusPage from '../src/docs/FocusPage';
 
 import LineItem from '../src/exampleComponentsToTest/lineItem/LineItem';
+import AnimTest from '../src/exampleComponentsToTest/animTest/AnimTest';
 
 
 
@@ -444,4 +445,5 @@ storiesOf('Example - react-json-grid', module)
     .add('high limit',()=>(<LineItem count={70} cost={3500} limit={100000}/>))
     .add('null A',()=>(<LineItem count={null} cost={3500} limit={10000}/>))
     .add('null B',()=>(<LineItem count={70} cost={null} limit={10000}/>))
+    .add('fsl animation test', () => (<AnimTest />))    
         

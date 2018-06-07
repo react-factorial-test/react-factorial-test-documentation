@@ -50,8 +50,8 @@
     "json-stable-stringify": "^1.0.1",
     "mdi-react": "^2.1.19",
     "react-autobind": "^1.0.6",
-    "react-factorial-test": "^0.0.17",
-    "react-json-grid": "1.0.30"
+    "react-factorial-test": "^0.0.20",
+    "react-json-grid": "1.0.31"
   },
   "peerDependencies": {
     "react": "^16.3.2",
